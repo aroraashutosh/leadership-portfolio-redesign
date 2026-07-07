@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leadership Portfolio — Rajan Iyer — March 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F3F5F1;
+    --paper-line:#C9CEC5;
+    --ink:#16211F;
+    --ink-soft:#4B5652;
+    --ink-faint:#7C8681;
+    --teal:#0B5D48;
+    --teal-soft:#E3EDE8;
+    --amber:#B5730E;
+    --amber-soft:#F7ECDA;
+    --stamp:#8C3324;
+    --stamp-soft:#F3E4E0;
+    --card:#FFFFFF;
+    --radius:10px;
+    --serif:'Fraunces', serif;
+    --sans:'IBM Plex Sans', sans-serif;
+    --mono:'IBM Plex Mono', monospace;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:
+      repeating-linear-gradient(
+        to bottom,
+        transparent 0px, transparent 31px,
+        rgba(201,206,197,0.35) 31px, rgba(201,206,197,0.35) 32px
+      ),
+      var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{
+    max-width:860px;
+    margin:0 auto;
+    padding:56px 28px 80px;
+  }
+  a{color:var(--teal);}
+
+  /* ---------- Identity block ---------- */
+  .identity{
+    display:flex;
+    align-items:flex-start;
+    gap:28px;
+    padding-bottom:28px;
+    border-bottom:2px solid var(--ink);
+    margin-bottom:36px;
+  }
+  .id-text{flex:1;}
+  .id-text h1{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:32px;
+    margin:0 0 4px;
+    letter-spacing:0.2px;
+  }
+  .id-role{font-size:15px;color:var(--ink-soft);margin:0 0 2px;}
+  .id-meta{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--ink-faint);
+    margin-top:10px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px 18px;
+  }
+
+  /* ---------- Headline / signal ---------- */
+  .headline{
+    display:flex;
+    align-items:center;
+    gap:24px;
+    padding:28px 30px;
+    background:var(--card);
+    border-left:5px solid var(--teal);
+    border-radius:0 var(--radius) var(--radius) 0;
+    box-shadow:0 1px 2px rgba(22,33,31,0.06);
+    margin-bottom:40px;
+  }
+  .headline p{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:24px;
+    line-height:1.4;
+    margin:0;
+    flex:1;
+  }
+  .score-badge{
+    flex:none;
+    text-align:center;
+    font-family:var(--mono);
+    padding-left:24px;
+    border-left:1px solid var(--paper-line);
+  }
+  .score-badge .num{font-size:34px;font-weight:600;color:var(--teal);line-height:1;}
+  .score-badge .delta{font-size:12px;color:var(--ink-faint);margin-top:4px;}
+
+  /* ---------- Section cards ---------- */
+  .section{
+    background:var(--card);
+    border-radius:var(--radius);
+    padding:30px 32px;
+    margin-bottom:24px;
+    box-shadow:0 1px 2px rgba(22,33,31,0.06);
+  }
+  .section .eyebrow{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    margin-bottom:10px;
+  }
+  .section h2{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:22px;
+    margin:0 0 14px;
+  }
+  .section .narrative{
+    font-size:15.5px;
+    color:var(--ink-soft);
+    max-width:62ch;
+    margin-bottom:20px;
+  }
+
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:6px;}
+  .chip{
+    font-family:var(--mono);
+    font-size:13px;
+    background:var(--teal-soft);
+    color:var(--teal);
+    padding:8px 14px;
+    border-radius:6px;
+    font-weight:500;
+  }
+  .chip.alt{background:var(--amber-soft);color:var(--amber);}
+
+  details.inline{margin-top:18px;}
+  details.inline > summary{
+    cursor:pointer;
+    font-family:var(--mono);
+    font-size:12.5px;
+    color:var(--teal);
+    list-style:none;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+  }
+  details.inline > summary::-webkit-details-marker{display:none;}
+  details.inline > summary::before{content:"+";font-weight:600;}
+  details.inline[open] > summary::before{content:"–";}
+  .ticket-list{
+    margin:16px 0 0;
+    padding:0;
+    list-style:none;
+    border-top:1px solid var(--paper-line);
+  }
+  .ticket-list li{
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    padding:10px 0;
+    border-bottom:1px solid var(--paper-line);
+    font-size:13.5px;
+  }
+  .ticket-list .tid{font-family:var(--mono);color:var(--ink-faint);font-size:12px;flex:none;width:64px;}
+  .ticket-list .tlabel{flex:1;color:var(--ink);}
+  .status-tag{
+    font-family:var(--mono);
+    font-size:10.5px;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+    padding:3px 8px;
+    border-radius:4px;
+    flex:none;
+    height:fit-content;
+  }
+  .status-tag.delivered{background:var(--teal-soft);color:var(--teal);}
+  .status-tag.pending_qa{background:var(--amber-soft);color:var(--amber);}
+  .status-tag.in_progress{border:1px solid var(--paper-line);color:var(--ink-faint);}
+  .status-tag.not_started{border:1px dashed var(--paper-line);color:var(--ink-faint);}
+
+  .ip-list{margin:16px 0 0;padding:0;list-style:none;}
+  .ip-list li{
+    font-size:13.5px;
+    padding:8px 0;
+    border-bottom:1px solid var(--paper-line);
+    color:var(--ink-soft);
+  }
+  .ip-list li::before{content:"— ";color:var(--ink-faint);}
+
+  /* ---------- Capability bars ---------- */
+  .bars{margin-top:6px;}
+  .bar-row{display:grid;grid-template-columns:120px 1fr 40px;align-items:center;gap:14px;margin-bottom:16px;}
+  .bar-row .label{font-family:var(--mono);font-size:12.5px;color:var(--ink-soft);}
+  .bar-track{position:relative;height:10px;background:var(--paper);border-radius:6px;overflow:visible;}
+  .bar-fill{height:100%;border-radius:6px;background:var(--teal);}
+  .bar-fill.gap{background:var(--amber);}
+  .bar-row .val{font-family:var(--mono);font-size:13px;text-align:right;color:var(--ink);}
+  .threshold{
+    position:absolute;
+    top:-4px;
+    bottom:-4px;
+    left:60%;
+    width:0;
+    border-left:1.5px dashed var(--ink-faint);
+  }
+  .threshold-label{
+    font-family:var(--mono);
+    font-size:10.5px;
+    color:var(--ink-faint);
+    margin:2px 0 0 120px;
+    padding-left:14px;
+  }
+
+  /* ---------- Compact row ---------- */
+  .compact-row{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:18px;
+    margin-bottom:24px;
+  }
+  .compact-card{
+    background:var(--card);
+    border-radius:var(--radius);
+    padding:0;
+    box-shadow:0 1px 2px rgba(22,33,31,0.06);
+    overflow:hidden;
+  }
+  .compact-card summary{
+    cursor:pointer;
+    list-style:none;
+    padding:20px 20px;
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+  }
+  .compact-card summary::-webkit-details-marker{display:none;}
+  .compact-card .c-eyebrow{
+    font-family:var(--mono);
+    font-size:10.5px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .compact-card .c-eyebrow::after{content:"+";font-weight:600;font-size:14px;color:var(--ink-faint);}
+  .compact-card[open] .c-eyebrow::after{content:"–";}
+  .compact-card .c-headline{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:19px;
+  }
+  .compact-card .c-body{
+    padding:0 20px 22px;
+    font-size:13.5px;
+    color:var(--ink-soft);
+    border-top:1px solid var(--paper-line);
+    margin-top:2px;
+    padding-top:16px;
+  }
+  .kv-list{margin:0;padding:0;list-style:none;}
+  .kv-list li{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed var(--paper-line);font-size:13px;}
+  .kv-list li:last-child{border-bottom:none;}
+  .tag-hit{color:var(--teal);font-family:var(--mono);font-size:11px;}
+  .tag-miss{color:var(--stamp);font-family:var(--mono);font-size:11px;}
+  .open-flag{
+    display:inline-block;
+    font-family:var(--mono);
+    font-size:10px;
+    border:1px dashed var(--ink-faint);
+    color:var(--ink-faint);
+    padding:1px 6px;
+    border-radius:4px;
+    margin-left:6px;
+  }
+  .resolved-flag{
+    display:inline-block;
+    font-family:var(--mono);
+    font-size:10px;
+    background:var(--teal-soft);
+    color:var(--teal);
+    padding:1px 6px;
+    border-radius:4px;
+    margin-left:6px;
+  }
+  .milestone-row{display:flex;justify-content:space-between;font-size:12.5px;padding:5px 0;}
+  .milestone-row.current{color:var(--teal);font-weight:600;}
+
+  .month-nav{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:20px;
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--ink-faint);
+    margin-bottom:28px;
+  }
+  .month-nav .arrow{color:var(--paper-line);}
+  .month-nav .current{
+    color:var(--ink);
+    font-weight:600;
+    font-size:13px;
+    padding:4px 12px;
+    border:1px solid var(--paper-line);
+    border-radius:6px;
+  }
+  footer{
+    margin-top:44px;
+    padding-top:18px;
+    border-top:1px solid var(--paper-line);
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--ink-faint);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+
+  @media (max-width:680px){
+    .compact-row{grid-template-columns:1fr;}
+    .identity{flex-direction:column;align-items:flex-start;}
+    .headline{flex-direction:column;align-items:flex-start;}
+    .score-badge{border-left:none;padding-left:0;border-top:1px solid var(--paper-line);padding-top:14px;width:100%;}
+    .bar-row{grid-template-columns:96px 1fr 34px;gap:10px;}
+    .threshold-label{margin-left:96px;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- MONTH NAV -->
+  <div class="month-nav">
+    <span class="arrow">‹</span>
+    <span>February 2026</span>
+    <span class="current">March 2026</span>
+    <span>April 2026</span>
+    <span class="arrow">›</span>
+  </div>
+
+  <!-- IDENTITY -->
+  <div class="identity">
+    <div class="id-text">
+      <h1>Rajan Iyer</h1>
+      <p class="id-role">Production Planning Lead — Sterile Injectables · Facility 3 Commercialization</p>
+      <div class="id-meta">
+        <span>Vayura Lifesciences</span>
+        <span>March 2026</span>
+        <span>UID · PDGMS-EMP-00512</span>
+        <span>Portfolio · PF-2026-03-00512</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADLINE / SIGNAL -->
+  <div class="headline">
+    <p>&ldquo;Breakthrough month — best delivery yet, one clear gap to close.&rdquo;</p>
+    <div class="score-badge">
+      <div class="num">71</div>
+      <div class="delta">↑ from 64 · ahead of pace</div>
+    </div>
+  </div>
+
+  <!-- WHAT I FINISHED -->
+  <div class="section">
+    <div class="eyebrow">Contribution</div>
+    <h2>What I finished</h2>
+    <p class="narrative">Rajan shipped 16 of 20 tasks this month — his highest completion rate since the program launched. The critical win was unsticking a process validation protocol that had been cycling between regulatory affairs and quality assurance since December; he broke the logjam by bringing both teams into a single joint review instead of a sequential one. He also created 7 original documents, including a deviation investigation procedure that the Head of Quality has now made the standard across all three manufacturing facilities.</p>
+    <div class="chips">
+      <span class="chip">16 / 20 delivered</span>
+      <span class="chip">7 original documents</span>
+      <span class="chip alt">1 adopted org-wide</span>
+    </div>
+    <details class="inline">
+      <summary>View all 20 deliverables and original work</summary>
+      <ul class="ticket-list">
+        <li><span class="tid">TKT-3001</span><span class="tlabel">Process validation protocol — lyophilized injectable line</span><span class="status-tag delivered">Delivered</span></li>
+        <li><span class="tid">TKT-3002</span><span class="tlabel">Batch record template — sterile fill-finish</span><span class="status-tag delivered">Delivered</span></li>
+        <li><span class="tid">TKT-3003</span><span class="tlabel">Deviation investigation SOP</span><span class="status-tag delivered">Delivered</span></li>
+        <li><span class="tid">TKT-3004</span><span class="tlabel">Equipment qualification matrix — 14 items</span><span class="status-tag delivered">Delivered</span></li>
+        <li><span class="tid">TKT-3005</span><span class="tlabel">IQ/OQ execution — autoclave unit 3</span><span class="status-tag delivered">Delivered</span></li>
+        <li><span class="tid">TKT-3006</span><span class="tlabel">IQ/OQ execution — vial washing machine</span><span class="status-tag delivered">Delivered</span></li>
+        <li><span class="tid">TKT-3007</span><span class="tlabel">PQ execution — lyophilizer cycle development</span><span class="status-tag delivered">Delivered</span></li>
+        <li><span class="tid">TKT-3008</span><span class="tlabel">Environmental monitoring trend analysis — 6 months</span><span class="status-tag delivered">Delivered</span></li>
+        <li><span class="tid">TKT-3009</span><span class="tlabel">Cleanroom 3B particulate excursion investigation</span><span class="status-tag delivered">Delivered</span></li>
+        <li><span class="tid">TKT-3010</span><span class="tlabel">Vendor qualification checklist — raw materials</span><span class="status-tag delivered">Delivered</span></li>
+        <li><span class="tid">TKT-3011</span><span class="tlabel">Vendor qualification checklist — primary packaging</span><span class="status-tag delivered">Delivered</span></li>
+        <li><span class="tid">TKT-3012</span><span class="tlabel">Yield optimization report — vial line 2</span><span class="status-tag delivered">Delivered</span></li>
+        <li><span class="tid">TKT-3013</span><span class="tlabel">Operator training batch 1 — aseptic filling</span><span class="status-tag delivered">Delivered</span></li>
+        <li><span class="tid">TKT-3014</span><span class="tlabel">Operator training batch 2 — lyophilization loading</span><span class="status-tag delivered">Delivered</span></li>
+        <li><span class="tid">TKT-3015</span><span class="tlabel">Operator training batch 3 — CIP/SIP procedures</span><span class="status-tag delivered">Delivered</span></li>
+        <li><span class="tid">TKT-3016</span><span class="tlabel">Operator training batch 4 — environmental monitoring sampling</span><span class="status-tag delivered">Delivered</span></li>
+        <li><span class="tid">TKT-3017</span><span class="tlabel">Compressed air system DQ/IQ completion</span><span class="status-tag pending_qa">Awaiting review</span></li>
+        <li><span class="tid">TKT-3018</span><span class="tlabel">Media fill protocol — 3 production lines</span><span class="status-tag in_progress">In progress</span></li>
+        <li><span class="tid">TKT-3019</span><span class="tlabel">Stability study protocol — first 3 commercial SKUs</span><span class="status-tag in_progress">In progress</span></li>
+        <li><span class="tid">TKT-3020</span><span class="tlabel">Facility 3 commercial readiness assessment for Q2 review</span><span class="status-tag not_started">Not started</span></li>
+      </ul>
+      <ul class="ip-list">
+        <li>Process validation protocol — lyophilized injectable line (3 product families, 12 SKUs)</li>
+        <li>Batch record template — sterile fill-finish operations with in-process control checkpoints</li>
+        <li>Deviation investigation SOP — root cause workflow for out-of-spec results</li>
+        <li>Equipment qualification matrix — IQ/OQ/PQ tracker for 14 critical items</li>
+        <li>Environmental monitoring trend analysis — 6-month cleanroom data</li>
+        <li>Vendor qualification checklist — raw material and packaging suppliers</li>
+        <li>Yield optimization report — identified 8% fill-weight variance, proposed fix</li>
+      </ul>
+    </details>
+  </div>
+
+  <!-- HOW I GREW -->
+  <div class="section">
+    <div class="eyebrow">Capability</div>
+    <h2>How I grew</h2>
+    <p class="narrative">Delivery and engagement are Rajan's strongest areas — he ships consistently and shows up to every ritual. Original work has climbed steadily as other teams start adopting his templates. The gap is structured thinking: Rajan solves problems through direct technical troubleshooting rather than applying a formal diagnostic framework — effective in the moment, but it means root causes can recur. This is the one thing standing between him and his next level.</p>
+    <div class="bars">
+      <div class="bar-row">
+        <span class="label">Delivery</span>
+        <div class="bar-track"><div class="bar-fill" style="width:80%"></div><div class="threshold"></div></div>
+        <span class="val">80</span>
+      </div>
+      <div class="bar-row">
+        <span class="label">Original work</span>
+        <div class="bar-track"><div class="bar-fill" style="width:74%"></div><div class="threshold"></div></div>
+        <span class="val">74</span>
+      </div>
+      <div class="bar-row">
+        <span class="label">Engagement</span>
+        <div class="bar-track"><div class="bar-fill" style="width:85%"></div><div class="threshold"></div></div>
+        <span class="val">85</span>
+      </div>
+      <div class="bar-row">
+        <span class="label">Process</span>
+        <div class="bar-track"><div class="bar-fill" style="width:58%"></div><div class="threshold"></div></div>
+        <span class="val">58</span>
+      </div>
+      <div class="bar-row">
+        <span class="label">Frameworks</span>
+        <div class="bar-track"><div class="bar-fill gap" style="width:52%"></div><div class="threshold"></div></div>
+        <span class="val">52</span>
+      </div>
+      <div class="threshold-label">┊ 60 — minimum for next level (V3)</div>
+    </div>
+  </div>
+
+  <!-- COMPACT ROW -->
+  <div class="compact-row">
+
+    <details class="compact-card">
+      <summary>
+        <span class="c-eyebrow">Targets</span>
+        <span class="c-headline">3 of 5 hit</span>
+      </summary>
+      <div class="c-body">
+        <ul class="kv-list">
+          <li>Batch success rate <span class="tag-miss">88 / 92 · miss</span></li>
+          <li>Equipment qualifications <span class="tag-hit">10 / 8 · hit</span></li>
+          <li>SOPs drafted &amp; approved <span class="tag-hit">7 / 5 · hit</span></li>
+          <li>Deviation closure rate <span class="tag-miss">78 / 90 · miss</span></li>
+          <li>Operator training batches <span class="tag-hit">4 / 4 · hit</span></li>
+        </ul>
+        <p style="font-size:12px;color:var(--ink-faint);margin:12px 0 0;">Batch success rate was pulled down by the HEPA filter delay — see &ldquo;What blocked me&rdquo;. Deviation closure is waiting on an outside lab, not Rajan's own backlog.</p>
+      </div>
+    </details>
+
+    <details class="compact-card">
+      <summary>
+        <span class="c-eyebrow">What blocked me</span>
+        <span class="c-headline">5 of 8 resolved</span>
+      </summary>
+      <div class="c-body">
+        <p style="margin-top:0;">Two patterns stood out: outside dependencies (contract lab, vendor lead times) and approval bottlenecks. Rajan fixed the approval bottleneck himself by moving to joint reviews — a change that now saves 3 weeks per protocol.</p>
+        <ul class="kv-list">
+          <li>HEPA filter delay, Cleanroom 3B <span class="resolved-flag">resolved</span></li>
+          <li>Regulatory review cycle <span class="resolved-flag">resolved</span></li>
+          <li>Compressed air system gap <span class="resolved-flag">resolved</span></li>
+          <li>Contract lab turnaround <span class="open-flag">open</span></li>
+          <li>Second shift supervisor vacancy <span class="open-flag">open</span></li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="compact-card">
+      <summary>
+        <span class="c-eyebrow">Where I'm headed</span>
+        <span class="c-headline">V3 · Feb 2027</span>
+      </summary>
+      <div class="c-body">
+        <p style="margin-top:0;">Tracking 3 months ahead of the planned May 2027 target. Delivery and original work already clear the bar for V3 — the remaining gap is applying structured frameworks and process discipline consistently.</p>
+        <div class="milestone-row"><span>V1 · Operator</span><span>Aug 2024</span></div>
+        <div class="milestone-row current"><span>V2 · Manager (current)</span><span>Nov 2025</span></div>
+        <div class="milestone-row"><span>V3 · Program Lead (projected)</span><span>Feb 2027</span></div>
+        <div class="milestone-row"><span>V4 · Strategic Director</span><span>Aug 2030</span></div>
+      </div>
+    </details>
+
+  </div>
+
+  <footer>
+    <span>Generated 2 Apr 2026 · Monthly report, submitted</span>
+    <span>This record follows Rajan under UID PDGMS-EMP-00512</span>
+  </footer>
+
+</div>
+</body>
+</html>
