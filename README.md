@@ -12,4 +12,4 @@ real mock data for one employee (Rajan Iyer, March 2026).
 - `design-rationale.pdf` — write-up of design decisions and tradeoffs
 
 ## Live preview
-[View the live page](your-github-pages-link-here)
+[View the live page]( https://aroraashutosh.github.io/leadership-portfolio-redesign/)
